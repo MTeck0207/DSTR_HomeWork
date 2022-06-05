@@ -10,6 +10,8 @@ void menu()
 	cout << "1) Lab 1 - Homework" << endl;
 	cout << "2) Lab 2 - Homework" << endl;
 	cout << "3) Lab 3 - Homework" << endl;
+	cout << "4) Lab 4 - Homework" << endl;
+	cout << "5) Lab 5 - Homework" << endl;
 	cout << "-99) Exit" << endl;
 }
 
@@ -32,6 +34,11 @@ void handleAction(int opt)
 		break;
 	}
 	case 4:
+	{
+		cout << "\n> See you next week!" << endl;
+		break;
+	}
+	case 5:
 	{
 		cout << "\n> See you next week!" << endl;
 		break;

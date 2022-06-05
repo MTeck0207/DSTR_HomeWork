@@ -65,4 +65,36 @@ void findLowest(int Array[], int Size, int* Lowest)
 	}
 }
 
+void checkAnswer(string Answer[], string User[], int* correct, int* wrong);
+void checkPass(int correct, int wrong);
+
+void checkAnswer(string Answer[], string User[], int* correct, int* wrong)
+{
+	for (int i = 0; i < 20; i++)
+	{
+		if (Answer[i] == User[i])
+		{
+			*correct = *correct + 1;
+		}
+		else
+		{
+			*wrong = *wrong + 1;
+		}
+	}
+}
+
+void checkPass(int correct, int wrong)
+{
+	if (correct >= 15)
+	{
+		cout << "CONGRATULATION!!! You had pass the exam !!!" << endl;
+		cout << "Your result is " << correct << " out of 20." << endl;
+	}
+	else
+	{
+		cout << "SADGE ~ You had fail the exam, LMAO" << endl;
+		cout << "Your result is " << wrong << " out of 20. NOOB" << endl;
+	}
+}
+
 #endif /* LAB1_FUNCTION_H_ */

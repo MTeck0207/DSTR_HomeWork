@@ -93,6 +93,35 @@ void runLab3()
 		cout << "The lowest mark: \n" << Lowest << endl;
 	}
 
+	case 4:
+	{
+		string Answer[20] = { "B","D","A","A","C","A","B","A","C","D","B","C","D","A","D","C","C","B","D","A" };
+		string User[20];
+
+		cout << "Please enter your answer: " << endl;
+
+		for (int i = 0; i < 20; i++)
+		{
+			string a;
+			cout << i + 1 << ".   ";
+			cin >> a;
+
+			while (a != "A" && a != "B" && a != "C" && a != "D")
+			{
+				cout << "Error! Answer should in the letters of A, B, C, or D." << endl;
+				cout << "Enter the answer again: ";
+				cin >> a;
+			}
+			User[i] = a;
+		}
+
+		cout << endl;
+		int correct = 0;
+		int wrong = 0;
+		checkAnswer(Answer, User, &correct, &wrong);
+		checkPass(correct, wrong);
+	}
+
 	default:
 		break;
 	}
