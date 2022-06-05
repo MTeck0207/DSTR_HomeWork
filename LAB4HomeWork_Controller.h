@@ -50,7 +50,11 @@ void runLab4()
 
 	case 2:
 	{
+		cashRegister cr;
 
+		cr.acceptAmount();
+		cr.CashRegister();
+		cr.printBalance();
 	}
 
 	case 3:

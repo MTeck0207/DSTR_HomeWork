@@ -53,5 +53,34 @@ void BankAccount::set_rate(int rate)
 	interest_rate = rate;
 }
 
+class cashRegister
+{
+private:
+	double cashOnHand;
+public:
+	void CashRegister(); //Update here.
+	void acceptAmount(); //Accept amount from customer.
+	void printBalance(); //To print the current balance.
+
+};
+
+void cashRegister::CashRegister()
+{
+	double initialBalance = 500;
+	cashOnHand = cashOnHand + initialBalance;
+
+}
+
+void cashRegister::acceptAmount()
+{
+	cout << "Please enter your amount: " << endl;
+	cin >> cashOnHand;
+}
+
+void cashRegister::printBalance()
+{
+	cout << endl;
+	cout << "The current balance is : \t" << cashOnHand << endl;
+}
 
 #endif /* LAB4_FUNCTION_H_ */
