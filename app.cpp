@@ -2,6 +2,7 @@
 #include "LAB1HomeWork_Controller.h"
 #include "LAB2HomeWork_Controller.h"
 #include "LAB3HomeWork_Controller.h"
+#include "LAB4HomeWork_Controller.h"
 
 using namespace std;
 
@@ -35,7 +36,7 @@ void handleAction(int opt)
 	}
 	case 4:
 	{
-		cout << "\n> See you next week!" << endl;
+		runLab4();
 		break;
 	}
 	case 5:
