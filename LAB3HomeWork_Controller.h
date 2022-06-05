@@ -49,6 +49,50 @@ void runLab3()
 		displayData(&Area, &Length, &Width);	
 	}
 
+	case 3:
+	{
+		int* Array;
+		int Size;
+		cout << "Please enter the number of subject: ";
+		cin >> Size;
+		Array = new int[Size];
+
+		cout << "Please enter the mark accordingly: \n";
+		int n;
+		for (int i = 0; i < Size; i++)
+		{
+			cout << "Mark " << i + 1 << " : ";
+			cin >> n;
+			while (n > 100 || n <= 0)
+			{
+				cout << "Error! number should in range of (1 to 100)." << endl;
+				cout << "Enter the number again: ";
+				cin >> n;
+			}
+			Array[i] = n;
+		}
+
+		int Average = 0;
+		int Sum = 0;
+
+		calcAverage(Array, Size, &Average, &Sum);
+
+		int Lowest = 0;
+		findLowest(Array, Size, &Lowest);
+
+		cout << endl;
+		cout << "Number of Subject: \n" << Size << endl;
+		cout << "Marks of the Subject: \n";
+		for (int i = 0; i < Size; i++)
+		{
+			cout << Array[i] << "\t";
+		}
+		cout << endl;
+		cout << "The sum of the marks: \n" << Sum << endl;
+		cout << "The average mark: \n" << Average << endl;
+		cout << "The lowest mark: \n" << Lowest << endl;
+	}
+
 	default:
 		break;
 	}

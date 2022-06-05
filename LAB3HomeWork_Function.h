@@ -4,6 +4,7 @@
 #define LAB3HomeWork_FUNCTION_H_
 
 #include <iostream>
+#include <numeric>
 
 using namespace std;
 
@@ -43,6 +44,25 @@ void displayData(double* Area, double* Length, double* Width)
 	cout << "The length of the rectangle: \t" << *Length << endl;
 	cout << "The width of the rectangle: \t" << *Width << endl;
 	cout << "The area of the rectangle: \t" << *Area << endl;
+}
+
+void calcAverage(int Array[], int Size, int* Average, int* Sum);
+void findLowest(int Array[], int Size, int* Lowest);
+
+void calcAverage(int Array[], int Size, int* Average, int* Sum)
+{
+	*Sum = accumulate(Array, Array + Size, *Sum);
+	*Average = *Sum / Size;
+}
+
+void findLowest(int Array[], int Size, int* Lowest)
+{
+	*Lowest = Array[0];
+	for (int i = 0; i < Size; i++) {
+		if (*Lowest > Array[i]) {
+			*Lowest = Array[i];
+		}
+	}
 }
 
 #endif /* LAB1_FUNCTION_H_ */
