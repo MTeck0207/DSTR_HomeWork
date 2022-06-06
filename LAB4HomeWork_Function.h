@@ -4,6 +4,7 @@
 #define LAB4HomeWork_FUNCTION_H_
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
