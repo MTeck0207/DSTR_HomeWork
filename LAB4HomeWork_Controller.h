@@ -46,15 +46,19 @@ void runLab4()
 		cout << "Your current account balance is: $" << ba.get_balance() << endl;
 		cout << "Your intetest rate is: " << ba.get_rate() << "% per year." << endl;
 		ba.update();
+
+		break;
 	}
 
 	case 2:
 	{
-		cashRegister cr;
+		cashRegister1 cr;
 
 		cr.acceptAmount();
 		cr.CashRegister();
 		cr.printBalance();
+
+		break;
 	}
 
 	case 3:
@@ -82,6 +86,8 @@ void runLab4()
 		r = emp3.getEmployee();
 		cout << r[0] << "\t\t" << r[1] << "\t\t\t" << r[2] << "\t\t" << r[3] << "\t\t" << endl;
 		print();
+
+		break;
 	}
 
 	case 4:
@@ -106,11 +112,186 @@ void runLab4()
 
 		cout << "Birth rate = " << a << " / " << c << " = " << p.getBirthRate() << endl;
 		cout << "Death rate = " << b << " / " << c << " = " << p.getDeathRate() << endl;
+
+		break;
 	}
 
 	case 5:
 	{
+		dispenserType dt1;
+		dispenserType dt2;
+		dispenserType dt3;
+		dispenserType dt4;
+		cashRegister cr;
 
+		char cont;
+
+		do
+		{
+			system("CLS");
+			print2();
+			cout << "\t\t\t\t Welcome to Fruit Juice Machine" << endl;
+			print2();
+			cout << endl;
+
+			cout << "No. \t\t\t Name\t\t\t Number of Item \t\t\t Cost" << endl;
+			print1();
+
+			cout << "1. \t\t\t Apple Juice \t\t\t" << dt1.getNoOfItems() << "\t\t\t\t" << dt1.getCost() << endl;
+			cout << "2. \t\t\t Orange Juice \t\t\t" << dt2.getNoOfItems() << "\t\t\t\t" << dt2.getCost() << endl;
+			cout << "3. \t\t\t Mango Lassi \t\t\t" << dt3.getNoOfItems() << "\t\t\t\t" << dt3.getCost() << endl;
+			cout << "4. \t\t\t Fruit Punch \t\t\t" << dt4.getNoOfItems() << "\t\t\t\t" << dt4.getCost() << endl;
+
+			cout << "Please select your item by the number." << endl;
+			int no;
+			cin >> no;
+
+			switch (no)
+			{
+			case 1:
+			{
+				if (dt1.getNoOfItems() > 0)
+				{
+					cout << "Please select the number of item." << endl;
+					int q;
+					cin >> q;
+
+					int p;
+					p = q * 50;
+					int m;
+					cout << "Please enter the money in cents which is " << p << endl;
+					cin >> m;
+
+					while (m < q && m < cr.getCurrentBalance())
+					{
+						cout << "Please enter the money in cents which is " << p << endl;
+						cin >> m;
+					}
+					cr.acceptAmount(p, m);
+					cout << "Your change is " << m - p << endl;
+
+					for (int i = 0; i < q; i++) {
+						dt1.makeSale();
+					}
+					break;
+				}
+				else
+				{
+					cout << "Please try again. This product had sold out." << endl;
+					break;
+				}
+
+			}
+			case 2:
+			{
+				if (dt2.getNoOfItems() > 0)
+				{
+					cout << "Please select the number of item." << endl;
+					int q;
+					cin >> q;
+
+					int p;
+					p = q * 50;
+					int m;
+					cout << "Please enter the money in cents which is " << p << endl;
+					cin >> m;
+
+					while (m < q && m < cr.getCurrentBalance())
+					{
+						cout << "Please enter the money in cents which is " << p << endl;
+						cin >> m;
+					}
+					cr.acceptAmount(p, m);
+
+					cout << "Your change is " << m - p << endl;
+					for (int i = 0; i < q; i++) {
+						dt2.makeSale();
+					}
+					break;
+				}
+				else
+				{
+					cout << "Please try again. This product had sold out." << endl;
+					break;
+				}
+			}
+			case 3:
+			{
+				if (dt3.getNoOfItems() > 0)
+				{
+					cout << "Please select the number of item." << endl;
+					int q;
+					cin >> q;
+
+					int p;
+					p = q * 50;
+					int m;
+					cout << "Please enter the money in cents which is " << p << endl;
+					cin >> m;
+
+					while (m < q && m < cr.getCurrentBalance())
+					{
+						cout << "Please enter the money in cents which is " << p << endl;
+						cin >> m;
+					}
+					cr.acceptAmount(p, m);
+					cout << "Your change is " << m - p << endl;
+
+					for (int i = 0; i < q; i++) {
+						dt3.makeSale();
+					}
+					break;
+				}
+				else
+				{
+					cout << "Please try again. This product had sold out." << endl;
+					break;
+				}
+			}
+			case 4:
+			{
+				if (dt4.getNoOfItems() > 0)
+				{
+					cout << "Please select the number of item." << endl;
+					int q;
+					cin >> q;
+
+					int p;
+					p = q * 50;
+					int m;
+					cout << "Please enter the money in cents which is " << p << endl;
+					cin >> m;
+
+					while (m < q && m < cr.getCurrentBalance())
+					{
+						cout << "Please enter the money in cents which is " << p << endl;
+						cin >> m;
+					}
+					cr.acceptAmount(p, m);
+					cout << "Your change is " << m - p << endl;
+
+					for (int i = 0; i < q; i++) {
+						dt4.makeSale();
+					}
+					break;
+				}
+				else
+				{
+					cout << "Please try again. This product had sold out." << endl;
+					break;
+				}
+			}
+
+			default:
+				break;
+			}
+
+			cout << "The current balance is: " << cr.getCurrentBalance() << endl;
+			cout << "Do you want to continue? Y for yes." << endl;
+			cin >> cont;
+		} while (cont == 'Y' || cont == 'y');
+
+		break;
 	}
 
 	default:

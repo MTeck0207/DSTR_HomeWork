@@ -54,7 +54,7 @@ void BankAccount::set_rate(int rate)
 	interest_rate = rate;
 }
 
-class cashRegister
+class cashRegister1
 {
 private:
 	double cashOnHand;
@@ -65,20 +65,20 @@ public:
 
 };
 
-void cashRegister::CashRegister()
+void cashRegister1::CashRegister()
 {
 	double initialBalance = 500;
 	cashOnHand = cashOnHand + initialBalance;
 
 }
 
-void cashRegister::acceptAmount()
+void cashRegister1::acceptAmount()
 {
 	cout << "Please enter your amount: " << endl;
 	cin >> cashOnHand;
 }
 
-void cashRegister::printBalance()
+void cashRegister1::printBalance()
 {
 	cout << endl;
 	cout << "The current balance is : \t" << cashOnHand << endl;
@@ -163,6 +163,99 @@ double population::getDeathRate()
 {
 	deathRate = (double)numberOfDeath / (double)Population;
 	return deathRate;
+}
+
+class cashRegister
+{
+private:
+	int cashOnHand; //an int variable that holds the cash in the register.
+
+public:
+	int getCurrentBalance(); //Function to show the current amount in the cash register.
+
+	void acceptAmount(int p, int m); //Function to receive the amount deposited by the customer and update the amount in the register
+
+	cashRegister(); //Default constructor to set the cash in the register to 500 cents.
+	cashRegister(int a); //Constructor with parameters to set the cash in the register to a specific amount.
+};
+
+int cashRegister::getCurrentBalance()
+{
+	return cashOnHand;
+}
+
+void cashRegister::acceptAmount(int p, int m)
+{
+	cashOnHand = cashOnHand + p - (m - p);
+}
+
+cashRegister::cashRegister()
+{
+	cashOnHand = 500;
+}
+
+cashRegister::cashRegister(int a)
+{
+	cashOnHand = a;
+}
+
+class dispenserType
+{
+private:
+	int numberOfItems; //variable to store the number of items in the dispenser.
+	int cost; //variable to store the cost of an item. 
+
+public:
+	int getNoOfItems();  //Function to show the number of items in the machine.
+	int getCost(); //Function to show the cost of the item.
+
+	void makeSale(); //Function to reduce the number of items by 1.
+
+	dispenserType(); //Default constructor to set the cost and number of items in the dispenser to 50.
+	dispenserType(int a, int b); //Constructor with parameters to set the costand number of items in the dispenser.
+};
+
+int dispenserType::getNoOfItems()
+{
+	return numberOfItems;
+}
+
+int dispenserType::getCost()
+{
+	return cost;
+}
+
+void dispenserType::makeSale()
+{
+	numberOfItems = numberOfItems - 1;
+}
+
+dispenserType::dispenserType()
+{
+	numberOfItems = 50;
+	cost = 50;
+}
+
+dispenserType::dispenserType(int a, int b)
+{
+	numberOfItems = a;
+	cost = b;
+}
+
+void print1()
+{
+	for (int i = 0; i < 100; i++) {
+		cout << "-";
+	}
+	cout << endl;
+}
+
+void print2()
+{
+	for (int i = 0; i < 100; i++) {
+		cout << "=";
+	}
+	cout << endl;
 }
 
 #endif /* LAB4_FUNCTION_H_ */

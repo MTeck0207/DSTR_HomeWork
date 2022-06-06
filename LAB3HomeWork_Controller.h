@@ -33,6 +33,8 @@ void runLab3()
 		convert(&measurement);
 		cout << fixed << setprecision(4);
 		cout << "Value in centimeters: " << measurement << endl;
+
+		break;
 	}
 
 	case 2:
@@ -47,6 +49,8 @@ void runLab3()
 		getArea(&Area, &Length, &Width);
 
 		displayData(&Area, &Length, &Width);	
+
+		break;
 	}
 
 	case 3:
@@ -91,6 +95,8 @@ void runLab3()
 		cout << "The sum of the marks: \n" << Sum << endl;
 		cout << "The average mark: \n" << Average << endl;
 		cout << "The lowest mark: \n" << Lowest << endl;
+
+		break;
 	}
 
 	case 4:
@@ -119,6 +125,8 @@ void runLab3()
 		int correct = 0;
 		checkAnswer(Answer, User, &correct);
 		checkPass(correct);
+
+		break;
 	}
 
 	default:
