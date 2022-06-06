@@ -117,9 +117,8 @@ void runLab3()
 
 		cout << endl;
 		int correct = 0;
-		int wrong = 0;
-		checkAnswer(Answer, User, &correct, &wrong);
-		checkPass(correct, wrong);
+		checkAnswer(Answer, User, &correct);
+		checkPass(correct);
 	}
 
 	default:

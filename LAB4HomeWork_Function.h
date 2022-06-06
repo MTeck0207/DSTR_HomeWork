@@ -83,4 +83,52 @@ void cashRegister::printBalance()
 	cout << "The current balance is : \t" << cashOnHand << endl;
 }
 
+class Employee
+{
+private:
+	string name, department, position;
+	int idNumber;
+
+public:
+	Employee();
+
+	void setEmployee(string a, int b, string c, string d);
+	string* getEmployee();
+};
+
+Employee::Employee()
+{
+	name = " ";
+	idNumber = 0;
+	department = " ";
+	position = " ";
+}
+
+void Employee::setEmployee(string a, int b, string c, string d)
+{
+	name = a;
+	idNumber = b;
+	department = c;
+	position = d;
+}
+
+string* Employee::getEmployee()
+{
+	static string r[4];
+	r[0] = name;
+	r[1] = to_string(idNumber);
+	r[2] = department;
+	r[3] = position;
+
+	return r;
+}
+
+void print()
+{
+	for (int i = 0; i < 100; i++) {
+		cout << "-";
+	}
+	cout << endl;
+}
+
 #endif /* LAB4_FUNCTION_H_ */

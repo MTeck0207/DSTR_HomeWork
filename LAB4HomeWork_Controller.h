@@ -59,7 +59,29 @@ void runLab4()
 
 	case 3:
 	{
-		
+		print();
+		cout << "Name\t\t" << "ID Number\t\t" << "Department\t\t" << "Position\t\t" << endl;
+		print();
+
+		string* r;
+
+		Employee emp1;
+		emp1.setEmployee("Susan", 47899, "Accounting", "Vice President");
+		r = emp1.getEmployee();
+		cout << r[0] << "\t\t" << r[1] << "\t\t\t" << r[2] << "\t\t" << r[3] << "\t\t" << endl;
+		print();
+
+		Employee emp2;
+		emp2.setEmployee("Matthew", 34522, "IT", "Programmer");
+		r = emp2.getEmployee();
+		cout << r[0] << "\t\t" << r[1] << "\t\t\t" << r[2] << "\t\t\t" << r[3] << "\t\t" << endl;
+		print();
+
+		Employee emp3;
+		emp3.setEmployee("James", 65881, "Manufacturing", "Engineer");
+		r = emp3.getEmployee();
+		cout << r[0] << "\t\t" << r[1] << "\t\t\t" << r[2] << "\t\t" << r[3] << "\t\t" << endl;
+		print();
 	}
 
 	case 4:

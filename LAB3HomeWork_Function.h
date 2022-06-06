@@ -65,10 +65,10 @@ void findLowest(int Array[], int Size, int* Lowest)
 	}
 }
 
-void checkAnswer(string Answer[], string User[], int* correct, int* wrong);
-void checkPass(int correct, int wrong);
+void checkAnswer(string Answer[], string User[], int* correct);
+void checkPass(int correct);
 
-void checkAnswer(string Answer[], string User[], int* correct, int* wrong)
+void checkAnswer(string Answer[], string User[], int* correct)
 {
 	for (int i = 0; i < 20; i++)
 	{
@@ -76,14 +76,10 @@ void checkAnswer(string Answer[], string User[], int* correct, int* wrong)
 		{
 			*correct = *correct + 1;
 		}
-		else
-		{
-			*wrong = *wrong + 1;
-		}
 	}
 }
 
-void checkPass(int correct, int wrong)
+void checkPass(int correct)
 {
 	if (correct >= 15)
 	{
@@ -93,7 +89,7 @@ void checkPass(int correct, int wrong)
 	else
 	{
 		cout << "SADGE ~ You had fail the exam, LMAO" << endl;
-		cout << "Your result is " << wrong << " out of 20. NOOB" << endl;
+		cout << "Your result is " << correct << " out of 20. NOOB" << endl;
 	}
 }
 
