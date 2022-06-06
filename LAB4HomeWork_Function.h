@@ -132,4 +132,37 @@ void print()
 	cout << endl;
 }
 
+class population
+{
+private:
+	int numberOfBirth, numberOfDeath, Population;
+	double birthRate, deathRate;
+
+public:
+	void setPopulation(int nob, int nod, int p);
+
+	double getBirthRate();
+	double getDeathRate();
+};
+
+void population::setPopulation(int nob, int nod, int p)
+{
+	numberOfBirth = nob;
+	numberOfDeath = nod;
+	Population = p;
+}
+
+double population::getBirthRate()
+{
+	birthRate = (double)numberOfBirth / (double)Population;
+	return birthRate;
+}
+
+
+double population::getDeathRate()
+{
+	deathRate = (double)numberOfDeath / (double)Population;
+	return deathRate;
+}
+
 #endif /* LAB4_FUNCTION_H_ */

@@ -86,7 +86,26 @@ void runLab4()
 
 	case 4:
 	{
-		
+		cout << "Please enter the data follow by number of birth, number of death and the population:" << endl;
+
+		population p;
+
+		int a, b, c;
+		cin >> a >> b >> c;
+		cout << endl;
+
+		while (a < 0 && b < 0 && c < 1)
+		{
+			cout << "Error! The birth and death should be more than 0 while the population should more than 1." << endl;
+			cout << "Enter the data again: " << endl;
+			cin >> a >> b >> c;
+			cout << endl;
+		}
+
+		p.setPopulation(a, b, c);
+
+		cout << "Birth rate = " << a << " / " << c << " = " << p.getBirthRate() << endl;
+		cout << "Death rate = " << b << " / " << c << " = " << p.getDeathRate() << endl;
 	}
 
 	case 5:
